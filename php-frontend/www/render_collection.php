@@ -3,6 +3,8 @@
 function render_collection($collection){
 $items= $collection->find();
 $item_count = $items->count();
+echo '
+		<div class="row">';
 
 echo $item_count . ' records found<br/>';
 
@@ -29,8 +31,10 @@ echo "
 	} 
 
 echo "
-</tbody>
-</table>";
+		</tbody>
+	</table>
+</div>
+";
 }
 }
 ?>
