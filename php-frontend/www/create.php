@@ -2,19 +2,23 @@
 require_once('mongo_config.php');
 ?>
 <form action="create_users.php" method="post">
+<h1> Make new user </h1>
 <p>
 <label for="name">Name:</label>
 <input type="text" name="name">
 </p>
+
+<h2> Restrictions - I require... </h2>
 <p>
-<label for="age">Age:</label>
-<input type="text" name="age">
+<input type="checkbox" name="pets" value="pets"> A pet-friendly space<br>
+<input type="checkbox" name="school" value="school"> A space more than 500m from a school<br>
+</p>
+
+<h2> Allowances - I have... </h2>
+<p>
+<input type="checkbox" name="sec8" value="sec8"> I have a Section 8 voucher<br>
 </p>
 <p>
-<label for="likes">Likes:</label>
-<input type="text" name="likes">
-</p>
-<p>
-<input type="submit" value="Save">
+<input type="submit" value="Submit">
 </p>
 </form>
