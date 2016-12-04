@@ -45,14 +45,14 @@ cost (u,s) =
 --once we have a polymoprhic implementation of hungarianMethod, this can be dropped
 toIntPair :: (User,Space) -> (Int,Int)
 toIntPair (u,s) =
-  (userId u, spaceId s)
+  (countId (u::User), countId (s::Space))
 
 --this is really terrible, replace hungarianMethod with polymorphic asap
 fromIntPairs :: [User] -> [Space] -> [(Int,Int)] -> [(User,Space)]
 fromIntPairs us ss ps =
  let
-  toUser i  = fromJust$ find (\u -> userId u  == i) us
-  toSpace i = fromJust$ find (\s -> spaceId s == i) ss
+  toUser i  = fromJust$ find (\u -> countId (u::User)  == i) us
+  toSpace i = fromJust$ find (\s -> countId (s::Space) == i) ss
  in
   map (\(uid,sid) -> (toUser uid, toSpace sid)) ps
 

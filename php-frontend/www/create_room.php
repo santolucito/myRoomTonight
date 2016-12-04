@@ -20,15 +20,15 @@ require_once('head.php');
 				<h2> My locations requires... </h2>
 				<p>Restrictions</p>
 				<p>
-					<input type="checkbox" name="restricts[]" value="sec8"> A Section 8 voucher<br>
-					<input type="checkbox" name="restricts[]" value="rentControl"> Rent control <br>
+					<input type="checkbox" name="requirements[]" value="HasSecEight"> A Section 8 voucher<br>
+					<input type="checkbox" name="requirements[]" value="HasRentControl"> Rent control <br>
 				</p>
 			</div>
       <div class="col-lg-4">
 				<h2>My location provides... </h2><p>Allowances</p>
 				<p>
-					<input type="checkbox" name="allows[]" value="pets"> A pet-friendly space<br>
-					<input type="checkbox" name="allows[]" value="school"> A space more than 500m from a school<br>
+					<input type="checkbox" name="allowances[]" value="AllowPets"> A pet-friendly space<br>
+					<input type="checkbox" name="allowances[]" value="NoSchool"> A space more than 500m from a school<br>
 				</p>
 		   </div>
 			</div>

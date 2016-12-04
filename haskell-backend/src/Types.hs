@@ -9,7 +9,7 @@ import GHC.Generics
 
 data User = User {
    name         :: String
-  ,userId       :: Int
+  ,countId       :: Int
   ,requirements :: Set Attrb
   ,allowances   :: Set Attrb
  } deriving (Generic,Show)
@@ -18,7 +18,7 @@ instance ToJSON User
 instance FromJSON User
 data Space = Space {
    name         :: String
-  ,spaceId      :: Int
+  ,countId      :: Int
   ,requirements :: Set Attrb
   ,allowances   :: Set Attrb
  } deriving (Show)

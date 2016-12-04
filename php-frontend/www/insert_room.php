@@ -9,7 +9,9 @@ ini_set('display_errors', 1);
 
 <?php
 if(!empty($_POST)){
-	$collection->insert(($_POST));
+	$count = $collection->count();
+  $_POST['countId'] = $count+1;
+	$collection->insert($_POST);
 	echo $_POST['name']. ' is registered!';
 }
 

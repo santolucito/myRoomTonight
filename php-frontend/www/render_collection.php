@@ -25,8 +25,8 @@ echo "
 	echo "<tr>
 		<td>".$v['id']."</a></td>
 		<td>".$v['name']."</td>
-		<td>".json_encode($v['allows'])."</td>
-		<td>".json_encode($v['restricts'])."</td>
+		<td>".json_encode($v['allowances'])."</td>
+		<td>".json_encode($v['requirements'])."</td>
 	</tr>";
 	} 
 

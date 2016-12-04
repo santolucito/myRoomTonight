@@ -26,8 +26,8 @@ function json_render($collection){
 $items= $collection->find();
   foreach($items as $v){
      echo '<p>';
-     echo json_encode($v);
-     echo json_encode(array($v['name'],json_encode($v['allows']),json_encode($v['restricts'])));
+     echo json_encode(json_encode($v));
+     //echo json_encode(array($v['name'],json_encode($v['allows']),json_encode($v['restricts'])));
      echo '</p>';
   }
 }
