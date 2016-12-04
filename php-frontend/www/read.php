@@ -2,51 +2,36 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require_once('mongo_config.php');
+require_once('render_collection.php');
 
+echo "<h2>Users</h2>";
+$collection = $db->users;
+render_collection($collection);
 
-$people = $collection->find();
-$people_count = $people->count();
-
-echo $people_count . ' records found<br/>';
-
-if($people_count > 0){
+echo "<h2>Rooms</h2>";
+$collection = $db->rooms;
+render_collection($collection);
 ?>
 
-<table border="1">
-<thead>
-	<tr>
-		<th>ID</th>
-		<th>Name</th>
-		<th>Age</th>
-		<th>Likes</th>
-	</tr>
-</thead>
-<tbody>
-	<?php foreach($people as $v){ ?>
-	<tr>
-		<td><a href="update_user.php?name=<?php echo $v['name']; ?>"><?php echo $v['id']; ?></a></td>
-		<td><?php echo $v['name']; ?></td>
-		<td><?php echo $v['age']; ?></td>
-		<td><?php echo $v['likes']; ?></td>
-	</tr>
-	<?php } ?>
-</tbody>
-</table>
-<?php } ?>
-
-Optimal allocation of rooms is...
+<h2>Optimal allocation of rooms is...</h2>
 
 <?php
-if($people_count > 0){
 //convert all results to a json string
-  foreach($people as $v){
-     echo json_encode($v);
-
+function json_render($collection){
+$items= $collection->find();
+  foreach($items as $v){
+     echo '<p>';
+     echo json_encode(array($v['name'],json_encode($v['allows']),json_encode($v['restricts'])));
+     echo '</p>';
   }
+}
+
+json_render($db->users);
+json_render($db->rooms);
 //call haskell program on json object
 
 //print results of haskell program
 
-}
+
 ?>
 
