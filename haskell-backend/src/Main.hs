@@ -5,9 +5,11 @@ import Types
 import Solver
 
 import Tests.Simple
+import Data.Aeson
 
 main :: IO ()
-main = putStrLn $ prettyOut $ findPairing [h1,h2] [s1,s2]
+--main = putStrLn $ prettyOut $ findPairing [h1,h2] [s1,s2]
+main = print $ Data.Aeson.encode h1
 
 prettyOut :: ([(User,Space)], Int) -> String
 prettyOut (ps,c) =
