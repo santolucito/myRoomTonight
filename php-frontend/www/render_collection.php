@@ -1,6 +1,16 @@
 <?php
+function render_as_json($collection){
+  $items= $collection->find();
+  $all = "";
+  foreach($items as $v){
+     $all = $all.(json_encode($v));
+     //echo json_encode(array($v['name'],json_encode($v['allows']),json_encode($v['restricts'])));
+     $all = $all."\n";
+  }
+  return $all;
+}
 
-function render_collection($collection){
+function render_as_htmltable($collection){
 $items= $collection->find();
 $item_count = $items->count();
 echo '

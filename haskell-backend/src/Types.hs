@@ -21,7 +21,9 @@ data Space = Space {
   ,countId      :: Int
   ,requirements :: Set Attrb
   ,allowances   :: Set Attrb
- } deriving (Show)
+ } deriving (Generic,Show)
+instance ToJSON Space
+instance FromJSON Space
 
 data Attrb = 
     NoSchool  

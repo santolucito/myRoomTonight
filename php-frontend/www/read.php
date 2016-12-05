@@ -10,11 +10,11 @@ require_once('head.php');
 <h2>Users</h2>
 <?php
 $collection = $db->users;
-render_collection($collection);
+render_as_htmltable($collection);
 
 echo "<h2>Rooms</h2>";
 $collection = $db->rooms;
-render_collection($collection);
+render_as_htmltable($collection);
 ?>
 
 <div class="row">
@@ -22,18 +22,12 @@ render_collection($collection);
 
 <?php
 //convert all results to a json string
-function json_render($collection){
-$items= $collection->find();
-  foreach($items as $v){
-     echo '<p>';
-     echo json_encode(json_encode($v));
-     //echo json_encode(array($v['name'],json_encode($v['allows']),json_encode($v['restricts'])));
-     echo '</p>';
-  }
-}
 
-json_render($db->users);
-json_render($db->rooms);
+$us = render_as_json($db->users);
+$ss = render_as_json($db->rooms);
+
+file_put_contents("/var/www/html/input.txt",$us."\n".$ss);
+echo shell_exec("./myRoomTonight 2>&1");
 //call haskell program on json object
 
 //print results of haskell program
