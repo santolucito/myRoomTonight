@@ -13,8 +13,8 @@ $c->insert(array("name" => "Fair Haven Shelter", "requirements" => [ "HasSecEigh
 
 $c = $db->users;
 print_r($c->drop());
-$c->insert(array("name" => "Mark", "requirements" => [ "AllowPets","NoSchool" ], "allowances" => [ "HasSecEight" ], "countId" =>  1 ));
 $c->insert(array("name" => "Sri", "requirements" => [ "AllowPets" ], "allowances" => [ "HasSecEight" ], "countId" =>  2 ));
+$c->insert(array("name" => "Mark", "requirements" => [ "AllowPets","NoSchool" ], "allowances" => [ "HasSecEight" ], "countId" =>  1 ));
 
 //$count = $c->count();
 ?>

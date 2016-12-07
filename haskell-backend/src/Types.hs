@@ -27,8 +27,9 @@ instance FromJSON Space
 
 data Attrb = 
     NoSchool  
-  | HasSecEight 
   | AllowPets  
+  | HasSecEight 
+  | HasRentControl  
  deriving (Generic,Ord,Eq,Show)
 instance ToJSON Attrb
 instance FromJSON Attrb

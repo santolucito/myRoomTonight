@@ -34,7 +34,7 @@ prettyOut :: ([(User,Space)], Int) -> String
 prettyOut (ps,c) =
  let 
   assignment (u,s) = 
-   if False --cost (u,s) <= 0 
+   if cost (u,s) > 0 
     then ""
     else (show $ name (u::User))++" stays at "++
          (show $ name (s::Space))++"<br>"
