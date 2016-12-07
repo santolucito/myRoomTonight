@@ -1,0 +1,18 @@
+body{
+		background-color: #d1e0f3;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+input, input[type="text"]{
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px ;
+    border-radius: 2px ;
+    border-width: 0px 0px 5px 0px;
+    padding: 5px;
+}
+
+.container{
+  padding-left: 35px;
+}

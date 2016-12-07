@@ -1,0 +1,3 @@
+"{\"_id\":{\"$id\":\"58449d542713910f068b4568\"},\"name\":\"Mark\",\"requirements\":[\"AllowPets\",\"NoSchool\"],\"allowances\":[\"HasSecEight\"],\"countId\":1}"
+
+"{\"_id\":{\"$id\":\"5844a682271391a6118b4568\"},\"name\":\"New Haven Shelter\",\"requirements\":[\"HasSecEight\"],\"allowances\":[\"AllowPets\",\"NoSchool\"],\"countId\":1}"

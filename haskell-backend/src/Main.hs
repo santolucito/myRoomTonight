@@ -33,8 +33,11 @@ x = "{\"_id\":{\"$id\":\"58449d542713910f068b4568\"},\"name\":\"Mark\",\"require
 prettyOut :: ([(User,Space)], Int) -> String
 prettyOut (ps,c) =
  let 
-  assignment (u,s) = (show $ name (u::User))++" stays at "++
-                     (show $ name (s::Space))
+  assignment (u,s) = 
+   if False --cost (u,s) <= 0 
+    then ""
+    else (show $ name (u::User))++" stays at "++
+         (show $ name (s::Space))++"<br>"
   unmatched = show c
  in
    "Made assignments...\n"++ 
