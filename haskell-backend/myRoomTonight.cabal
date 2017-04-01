@@ -19,6 +19,9 @@ executable myRoomTonight
   -- other-modules:       
   -- other-extensions:    
   build-depends:       base >=4.9 && <4.10
+                      ,happstack-lite
+                      ,text
+                      ,blaze-html
                       ,Munkres
                       ,containers
                       ,array
